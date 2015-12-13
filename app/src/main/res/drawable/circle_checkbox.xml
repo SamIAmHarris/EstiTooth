@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval" >
+
+    <solid android:color="@color/white" />
+
+    <!-- This is the stroke you want to define
+    <stroke android:width="1dp"
+        android:color="@color/cookie_text_color"/>
+        -->
+
+
+</shape>
