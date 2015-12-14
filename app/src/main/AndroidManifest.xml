@@ -21,25 +21,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".EnteredBakingActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar.Up">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".EnteredBakingActivity"
+            android:theme="@style/AppTheme.NoActionBar.UpRight">
+        </activity>
         <activity android:name=".GatherIngredientsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar.RightLeft">
         </activity>
         <activity android:name=".CookieDoughActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar.RightLeft">
         </activity>
         <activity android:name=".RoosterActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
+            android:theme="@style/AppTheme.NoActionBar.UpRight">
         </activity>
 
     </application>

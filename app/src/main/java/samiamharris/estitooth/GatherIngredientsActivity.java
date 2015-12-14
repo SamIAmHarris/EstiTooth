@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -26,7 +28,14 @@ public class GatherIngredientsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cookieDoughIntent = new Intent(getBaseContext(), CookieDoughActivity.class);
-                startActivity(cookieDoughIntent);
+
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        // the context of the activity
+                        GatherIngredientsActivity.this, null
+                );
+                ActivityCompat.startActivity(GatherIngredientsActivity.this, cookieDoughIntent, options.toBundle());
+
+
             }
         });
 

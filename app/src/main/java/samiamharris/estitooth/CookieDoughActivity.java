@@ -22,8 +22,7 @@ public class CookieDoughActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent roosterIntent = new Intent(CookieDoughActivity.this, RoosterActivity.class);
-                startActivity(roosterIntent);
+                Toast.makeText(CookieDoughActivity.this, "All Done", Toast.LENGTH_SHORT).show();
             }
         });
     }

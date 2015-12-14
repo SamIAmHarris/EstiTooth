@@ -5,12 +5,15 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -55,7 +58,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         blackSwitch = (Switch) findViewById(R.id.black_beacon_switch);
+        blackSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Intent bakingIntent = new Intent(getBaseContext(), EnteredBakingActivity.class);
+
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        // the context of the activity
+                        MainActivity.this, null
+                );
+                ActivityCompat.startActivity(MainActivity.this, bakingIntent, options.toBundle());
+            }
+        });
         stickerSwitch = (Switch) findViewById(R.id.sticker_beacon_switch);
+        stickerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Intent roosterIntent = new Intent(getBaseContext(), RoosterActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        // the context of the activity
+                        MainActivity.this, null
+                );
+                ActivityCompat.startActivity(MainActivity.this, roosterIntent, options.toBundle());
+
+
+            }
+        });
         whiteSwitch = (Switch) findViewById(R.id.white_beacon_switch);
 
 //        updateBeaconsButton = (Button) findViewById(R.id.update_beacon_button);
@@ -154,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
-                beaconManager.startRanging(region);
+                //beaconManager.startRanging(region);
             }
         });
     }

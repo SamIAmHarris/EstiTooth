@@ -3,6 +3,8 @@ package samiamharris.estitooth;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -22,7 +24,12 @@ public class EnteredBakingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cookieDoughIntent = new Intent(getBaseContext(), GatherIngredientsActivity.class);
-                startActivity(cookieDoughIntent);
+
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        // the context of the activity
+                        EnteredBakingActivity.this, null
+                );
+                ActivityCompat.startActivity(EnteredBakingActivity.this, cookieDoughIntent, options.toBundle());
             }
         });
 
