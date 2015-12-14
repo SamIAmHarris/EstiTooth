@@ -18,10 +18,11 @@ public class CookieDoughActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cookie_dough);
 
-        ImageButton continueButton = (ImageButton) findViewById(R.id.continue_cookie_fab);
+        final ImageButton continueButton = (ImageButton) findViewById(R.id.continue_cookie_fab);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                continueButton.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
                 Toast.makeText(CookieDoughActivity.this, "All Done", Toast.LENGTH_SHORT).show();
             }
         });

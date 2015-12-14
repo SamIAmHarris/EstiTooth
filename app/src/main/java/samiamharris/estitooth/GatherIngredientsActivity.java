@@ -1,9 +1,8 @@
 package samiamharris.estitooth;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -48,7 +47,7 @@ public class GatherIngredientsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 chocoRelativeLayout.setBackground(getResources().getDrawable(R.drawable.checked_list_background));
                 chocoTextView.setTextColor(getResources().getColor(R.color.cookie_text_color));
-                chocoCheckView.setVisibility(View.VISIBLE);
+                fadeViewAnimation(chocoCheckView);
             }
         });
 
@@ -61,7 +60,7 @@ public class GatherIngredientsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cookieRelativeLayout.setBackground(getResources().getDrawable(R.drawable.checked_list_background));
                 cookieTextView.setTextColor(getResources().getColor(R.color.cookie_text_color));
-                cookieCheckView.setVisibility(View.VISIBLE);
+                fadeViewAnimation(cookieCheckView);
             }
         });
 
@@ -74,9 +73,20 @@ public class GatherIngredientsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 bakingRelativeLayout.setBackground(getResources().getDrawable(R.drawable.checked_list_background));
                 bakingTextView.setTextColor(getResources().getColor(R.color.cookie_text_color));
-                bakingCheckView.setVisibility(View.VISIBLE);
+                fadeViewAnimation(bakingCheckView);
             }
         });
-
     }
+
+
+    public void fadeViewAnimation(View v) {
+        v.setAlpha(0f);
+        v.setVisibility(View.VISIBLE);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(v, "alpha",
+                100f);
+        fadeIn.setDuration(5000);
+        fadeIn.start();
+    }
+
+
 }
