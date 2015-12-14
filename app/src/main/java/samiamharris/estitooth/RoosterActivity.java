@@ -1,5 +1,6 @@
 package samiamharris.estitooth;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -32,6 +33,9 @@ public class RoosterActivity extends AppCompatActivity {
      */
     private PagerAdapter mPagerAdapter;
 
+    MediaPlayer roosterPlayer;
+
+    boolean isPaused = true;
 
 
     @Override
@@ -42,7 +46,7 @@ public class RoosterActivity extends AppCompatActivity {
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setClipToPadding(false);
-        mPager.setPadding(200, 0, 200, 0);
+        mPager.setPadding(260, 0, 260, 0);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
         mPager.setCurrentItem(2);
@@ -51,7 +55,22 @@ public class RoosterActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setImageDrawable(getResources().getDrawable(R.drawable.ic_nav_pause));
+                if(isPaused) {
+                    button.setImageDrawable(getResources().getDrawable(R.drawable.ic_nav_pause));
+                    roosterPlayer.start();
+                    isPaused = false;
+                } else {
+                    button.setImageDrawable(getResources().getDrawable(R.drawable.ic_nav_play));
+                }
+            }
+        });
+
+        roosterPlayer = MediaPlayer.create(getBaseContext(), R.raw.rooster_crowing_sound);
+        roosterPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                isPaused = true;
+                button.setImageDrawable(getResources().getDrawable(R.drawable.ic_nav_play));
             }
         });
 
