@@ -16,21 +16,108 @@
         android:text="Now place the cookie dough\non the pan, top each cookie\nwith Chocolate Chips!"
         style="@style/InstructionsTextViewStyle"/>
 
+
     <RelativeLayout
-        android:id="@+id/lets_bake_text_view"
         android:background="@drawable/cookie_tray"
         android:layout_centerInParent="true"
-        android:layout_width="320dp"
-        android:layout_height="200dp">
+        android:layout_width="340dp"
+        android:layout_height="210dp"/>
 
-        <ImageView
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:src="@drawable/cookies_together_all"
-            android:layout_centerInParent="true"
-            android:layout_width="260dp"
-            android:layout_height="180dp" />
+    <RelativeLayout
+        android:id="@+id/lets_bake_text_view"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
 
+
+        <LinearLayout
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/cookie_1"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:visibility="invisible"
+                android:src="@drawable/cookie_1_1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="140dp" />
+
+            <ImageView
+                android:id="@+id/cookie_2"
+                android:visibility="invisible"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/cookie_1_2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="140dp" />
+
+            <ImageView
+                android:id="@+id/cookie_3"
+                android:visibility="visible"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/cookie_1_3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="140dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/cookie_4"
+                android:visibility="invisible"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/cookie_1_4"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="140dp" />
+
+            <ImageView
+                android:id="@+id/cookie_5"
+                android:visibility="invisible"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/cookie_1_5"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="140dp" />
+
+            <ImageView
+                android:id="@+id/cookie_6"
+                android:visibility="invisible"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/cookie_1_6"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="140dp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
