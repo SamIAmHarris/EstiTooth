@@ -2,15 +2,12 @@ package samiamharris.estitooth;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 /**
  * Created by SamMyxer on 12/4/15.
@@ -30,6 +27,8 @@ public class CookieDoughActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cookie_dough);
 
+        final ImageView checkmark = (ImageView) findViewById(R.id.checkmark);
+
         cookieOne = (ImageView) findViewById(R.id.cookie_1);
         cookieTwo = (ImageView) findViewById(R.id.cookie_2);
         cookieThree = (ImageView) findViewById(R.id.cookie_3);
@@ -37,12 +36,12 @@ public class CookieDoughActivity extends AppCompatActivity {
         cookieFive = (ImageView) findViewById(R.id.cookie_5);
         cookieSix = (ImageView) findViewById(R.id.cookie_6);
 
-        AnimatorSet setOne = fadeViewAnimation(cookieOne);
-        AnimatorSet setTwo = fadeViewAnimation(cookieTwo);
-        AnimatorSet setThree = fadeViewAnimation(cookieThree);
-        AnimatorSet setFour = fadeViewAnimation(cookieFour);
-        AnimatorSet setFive = fadeViewAnimation(cookieFive);
-        AnimatorSet setSix = fadeViewAnimation(cookieSix);
+        AnimatorSet setOne = placeCookieAnimation(cookieOne);
+        AnimatorSet setTwo = placeCookieAnimation(cookieTwo);
+        AnimatorSet setThree = placeCookieAnimation(cookieThree);
+        AnimatorSet setFour = placeCookieAnimation(cookieFour);
+        AnimatorSet setFive = placeCookieAnimation(cookieFive);
+        AnimatorSet setSix = placeCookieAnimation(cookieSix);
 
         AnimatorSet allTogetherSet = new AnimatorSet();
         allTogetherSet.playSequentially(setOne, setTwo, setThree, setFour, setFive, setSix);
@@ -53,12 +52,13 @@ public class CookieDoughActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                continueButton.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
+                continueButton.setImageDrawable(null);
+                fadeViewAnimation(checkmark);
             }
         });
     }
 
-    public AnimatorSet fadeViewAnimation(View v) {
+    public AnimatorSet placeCookieAnimation(View v) {
         v.setAlpha(0f);
         v.setVisibility(View.VISIBLE);
 
@@ -81,6 +81,15 @@ public class CookieDoughActivity extends AppCompatActivity {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(fadeIn, moveRight, shrinkX, shrinkY);
         return set;
+    }
+
+    public void fadeViewAnimation(View v) {
+        v.setAlpha(0f);
+        v.setVisibility(View.VISIBLE);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(v, "alpha",
+                100f);
+        fadeIn.setDuration(2000);
+        fadeIn.start();
     }
 
     public float dpToPixels(int dp) {

@@ -59,10 +59,10 @@
                 <ImageView
                     android:visibility="invisible"
                     android:id="@+id/cookie_dough_check"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/check_mark"
                     android:layout_centerInParent="true"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp" />
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
 
             </RelativeLayout>
 
@@ -102,10 +102,10 @@
                 <ImageView
                     android:visibility="invisible"
                     android:id="@+id/choco_chips_check"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/check_mark"
                     android:layout_centerInParent="true"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp" />
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
 
             </RelativeLayout>
 
@@ -145,10 +145,10 @@
                 <ImageView
                     android:visibility="invisible"
                     android:id="@+id/baking_pan_check"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/check_mark"
                     android:layout_centerInParent="true"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp" />
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
 
             </RelativeLayout>
 
