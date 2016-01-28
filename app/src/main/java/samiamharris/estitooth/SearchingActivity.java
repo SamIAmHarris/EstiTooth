@@ -1,9 +1,13 @@
 package samiamharris.estitooth;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.transition.Transition;
@@ -123,5 +127,32 @@ public class SearchingActivity extends AppCompatActivity {
                 SearchingActivity.this, null
         );
         ActivityCompat.startActivity(SearchingActivity.this, bakingIntent, options.toBundle());
+    }
+
+    public void sendNotification(String eventDescription, String title, String content) {
+        int notificationId = 001;
+        Intent searchIntent = new Intent(this, SearchingActivity.class);
+        PendingIntent mainPendingIntent =
+                PendingIntent.getActivity(this, 0, searchIntent, 0);
+
+        NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
+        bigStyle.bigText(eventDescription);
+
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setContentTitle(title)
+                        .setContentText(eventDescription)
+                        .setContentIntent(mainPendingIntent)
+                        .setStyle(bigStyle);
+
+        // Get an instance of the NotificationManager service
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
+
+        // Build the notification and issues it with notification manager.
+        notificationManager.notify(notificationId, notificationBuilder.build());
+
     }
 }
