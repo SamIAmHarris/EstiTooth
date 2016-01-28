@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="blue_button">#1677FF</color>
+
     <color name="list_item_fill">#EDF6FF</color>
     <color name="list_item_border">#B5D9FE</color>
     <color name="lit_item_checked_fill">#F8F8F8</color>

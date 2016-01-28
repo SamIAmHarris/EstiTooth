@@ -17,49 +17,8 @@
     </style>
 
 
-    <style name="AppTheme.NoActionBar.RightLeft" parent="AppTheme.NoActionBar">
-
+    <style name="AppTheme.NoActionBar.AllowTransitions" parent="AppTheme.NoActionBar">
         <item name="android:windowContentTransitions">true</item>
-
-        <item name="android:windowEnterTransition">@android:transition/slide_right</item>
-        <item name="android:windowExitTransition">@android:transition/slide_left</item>
-
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <!-- just focused on enter/exit for now.
-        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item> -->
-
-
-    </style>
-
-    <style name="AppTheme.NoActionBar.Up" parent="AppTheme.NoActionBar">
-
-        <item name="android:windowContentTransitions">true</item>
-
-        <item name="android:windowExitTransition">@android:transition/slide_top</item>
-
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <!-- just focused on enter/exit for now.
-        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item> -->
-
-    </style>
-
-    <style name="AppTheme.NoActionBar.UpRight" parent="AppTheme.NoActionBar">
-        <item name="android:windowContentTransitions">true</item>
-
-        <item name="android:windowEnterTransition">@android:transition/slide_bottom</item>
-        <item name="android:windowExitTransition">@android:transition/slide_left</item>
-
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <!-- just focused on enter/exit for now.
-        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item> -->
-
-
     </style>
 
     <style name="StepTextViewStyle" parent="@android:style/TextAppearance">

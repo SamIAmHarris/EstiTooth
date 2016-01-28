@@ -86,31 +86,6 @@ public class MainActivity extends AppCompatActivity {
         });
         whiteSwitch = (Switch) findViewById(R.id.white_beacon_switch);
 
-//        updateBeaconsButton = (Button) findViewById(R.id.update_beacon_button);
-//        updateBeaconsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(searchingForBeacons) {
-//                    searchingForBeacons = false;
-//                    updateBeaconsButton.setText("UPDATE BEACON STATUS");
-//                } else {
-//                    searchingForBeacons = true;
-//                    updateBeaconsButton.setText("SEARCHING FOR BEACONS");
-//                }
-//            }
-//        });
-
-//        clearBeaconsButton = (Button) findViewById(R.id.clear_beacon_button);
-//        clearBeaconsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                blackSwitch.setChecked(false);
-//                stickerSwitch.setChecked(false);
-//                whiteSwitch.setChecked(false);
-//            }
-//        });
-
-
         beaconManager = new BeaconManager(this);
 
         beaconManager.setRangingListener(new BeaconManager.RangingListener() {
@@ -150,10 +125,10 @@ public class MainActivity extends AppCompatActivity {
                                     break;
                                 case ICE_BEACON:
                                     whiteSwitch.setChecked(true);
-                                    MediaPlayer bearPlayer = MediaPlayer.create(getBaseContext(), R.raw.bear);
-                                    bearPlayer.start();
-                                    Toast.makeText(getBaseContext(), "bear", Toast.LENGTH_SHORT).show();
-                                    sendNotification("A bear is charging", "Bear", "content");
+//                                    MediaPlayer bearPlayer = MediaPlayer.create(getBaseContext(), R.raw.bear);
+//                                    bearPlayer.start();
+//                                    Toast.makeText(getBaseContext(), "bear", Toast.LENGTH_SHORT).show();
+//                                    sendNotification("A bear is charging", "Bear", "content");
                                     break;
                             }
                         }
@@ -182,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
-                //beaconManager.startRanging(region);
+                beaconManager.startRanging(region);
             }
         });
     }

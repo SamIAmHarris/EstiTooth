@@ -4,7 +4,10 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
+import android.transition.Transition;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -25,6 +28,19 @@ public class CookieDoughActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Transition left = new Slide(Gravity.LEFT);
+        Transition right = new Slide(Gravity.RIGHT);
+
+        left.excludeTarget(android.R.id.statusBarBackground, true);
+        left.excludeTarget(android.R.id.navigationBarBackground, true);
+
+        right.excludeTarget(android.R.id.statusBarBackground, true);
+        right.excludeTarget(android.R.id.navigationBarBackground, true);
+
+        getWindow().setExitTransition(left);
+        getWindow().setEnterTransition(right);
+
+
         setContentView(R.layout.activity_cookie_dough);
 
         final ImageView checkmark = (ImageView) findViewById(R.id.checkmark);

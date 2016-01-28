@@ -6,6 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -18,6 +21,18 @@ public class EnteredBakingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entered_baking);
+
+        Transition left = new Slide(Gravity.LEFT);
+        Transition right = new Slide(Gravity.BOTTOM);
+
+        left.excludeTarget(android.R.id.statusBarBackground, true);
+        left.excludeTarget(android.R.id.navigationBarBackground, true);
+
+        right.excludeTarget(android.R.id.statusBarBackground, true);
+        right.excludeTarget(android.R.id.navigationBarBackground, true);
+
+        getWindow().setExitTransition(left);
+        getWindow().setEnterTransition(right);
 
         ImageButton playButton = (ImageButton) findViewById(R.id.play_fab);
         playButton.setOnClickListener(new View.OnClickListener() {

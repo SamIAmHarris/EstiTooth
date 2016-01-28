@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -41,6 +44,19 @@ public class RoosterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Transition left = new Slide(Gravity.LEFT);
+        Transition right = new Slide(Gravity.BOTTOM);
+
+        left.excludeTarget(android.R.id.statusBarBackground, true);
+        left.excludeTarget(android.R.id.navigationBarBackground, true);
+
+        right.excludeTarget(android.R.id.statusBarBackground, true);
+        right.excludeTarget(android.R.id.navigationBarBackground, true);
+
+        getWindow().setExitTransition(left);
+        getWindow().setEnterTransition(right);
+
+
         setContentView(R.layout.activity_rooster);
 
         // Instantiate a ViewPager and a PagerAdapter.
