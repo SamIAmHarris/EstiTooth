@@ -7,13 +7,13 @@
 
     <TextView
         android:id="@+id/good_job_text_view"
-        android:text="GOOD JOB"
+        android:text="STEP TWO"
         style="@style/StepTextViewStyle"/>
 
     <TextView
         android:id="@+id/gather_ingredients_text_view"
         android:layout_below="@+id/good_job_text_view"
-        android:text="Now place the cookie dough\non the pan, top each cookie\nwith Chocolate Chips!"
+        android:text="Now place the cookies in the oven!"
         style="@style/InstructionsTextViewStyle"/>
 
 
