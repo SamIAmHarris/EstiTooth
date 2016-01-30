@@ -20,6 +20,11 @@ public class SearchingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setEnterExitTransitions();
         setContentView(R.layout.activity_searching);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         Handler handler = new Handler();
 
@@ -28,7 +33,8 @@ public class SearchingActivity extends AppCompatActivity {
             public void run() {
                 sendBakingIntent();
             }
-        }, 5000);
+        }, 1000);
+
     }
 
     public void setEnterExitTransitions() {
