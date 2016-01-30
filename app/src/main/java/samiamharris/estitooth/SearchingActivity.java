@@ -20,16 +20,16 @@ public class SearchingActivity extends AppCompatActivity {
     }
 
     public void setEnterExitTransitions() {
-        Transition up = new Slide(Gravity.TOP);
+        //Transition up = new Slide(Gravity.TOP);
         Transition right = new Slide(Gravity.RIGHT);
 
-        up.excludeTarget(android.R.id.statusBarBackground, true);
-        up.excludeTarget(android.R.id.navigationBarBackground, true);
+        //up.excludeTarget(android.R.id.statusBarBackground, true);
+        //up.excludeTarget(android.R.id.navigationBarBackground, true);
 
         right.excludeTarget(android.R.id.statusBarBackground, true);
         right.excludeTarget(android.R.id.navigationBarBackground, true);
 
-        getWindow().setExitTransition(up);
+        //getWindow().setExitTransition(up);
         getWindow().setEnterTransition(right);
     }
 
