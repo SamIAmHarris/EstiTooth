@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/good_job_text_view"
-        android:text="STEP TWO"
+        android:text="STEP 2"
         style="@style/StepTextViewStyle"/>
 
     <TextView
