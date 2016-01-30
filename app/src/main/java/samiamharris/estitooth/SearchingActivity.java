@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.ProgressBar;
 
 
 /**
@@ -22,6 +24,11 @@ public class SearchingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setEnterExitTransitions();
         setContentView(R.layout.activity_searching);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         Handler handler = new Handler();
 
