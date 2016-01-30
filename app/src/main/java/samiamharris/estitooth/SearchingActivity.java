@@ -33,7 +33,7 @@ public class SearchingActivity extends AppCompatActivity {
             public void run() {
                 sendBakingIntent();
             }
-        }, 1000);
+        }, 2000);
 
     }
 
