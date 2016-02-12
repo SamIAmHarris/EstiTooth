@@ -13,7 +13,6 @@ import android.transition.Transition;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 /**
  * Created by SamMyxer on 12/4/15.
@@ -23,7 +22,7 @@ public class RoosterActivity extends AppCompatActivity {
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
-    private static final int NUM_PAGES = 5;
+    private static final int NUM_PAGES = 4;
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
@@ -65,7 +64,7 @@ public class RoosterActivity extends AppCompatActivity {
         mPager.setPadding(260, 0, 260, 0);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-        mPager.setCurrentItem(2);
+        mPager.setCurrentItem(1);
 
         final ImageButton button = (ImageButton) findViewById(R.id.rooster_play);
         button.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +92,7 @@ public class RoosterActivity extends AppCompatActivity {
     }
     
     /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
+     * A simple pager adapter that represents 3 ScreenSlidePageFragment objects, in
      * sequence.
      */
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
@@ -103,7 +102,18 @@ public class RoosterActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ScreenSlidePageFragment();
+
+            switch (position) {
+                case 0:
+                    return new OtherAnimalFragment();
+                case 1:
+                    return new RoosterFragment();
+                case 2:
+                    return new OwlFragment();
+                case 3:
+                    return new DuckFragment();
+            }
+            return new DuckFragment();
         }
 
 

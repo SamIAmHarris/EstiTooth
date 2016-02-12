@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/fragment_swipe_animal_title"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="Elephant"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:layout_below="@+id/fragment_swipe_animal_title"
+        android:layout_margin="12dp"
+        android:background="@color/list_item_fill"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+
+        <ImageView
+            android:src="@drawable/elephant"
+            android:layout_margin="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
