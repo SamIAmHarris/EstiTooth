@@ -45,7 +45,7 @@ public class CookieDoughActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_cookie_dough);
-        
+
         final ImageView checkmark = (ImageView) findViewById(R.id.checkmark);
 
         cookieOne = (ImageView) findViewById(R.id.cookie_1);

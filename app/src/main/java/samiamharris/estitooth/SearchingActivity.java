@@ -11,6 +11,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -82,7 +83,12 @@ public class SearchingActivity extends AppCompatActivity {
 
     public void respondToBeaconDiscovered(List<Beacon> list) {
         if (!list.isEmpty()) {
+            Log.i("Search", "beacon discovered");
             Beacon nearestBeacon = list.get(0);
+            if(currentBeacon != null && nearestBeacon != null) {
+                Log.i("Search", "nearest:" + String.valueOf(nearestBeacon.getMajor())
+                        + "current:" + String.valueOf(currentBeacon.getMajor()));
+            }
             Utils.Proximity proximity = Utils.computeProximity(nearestBeacon);
             if(currentBeacon == null || nearestBeacon.getMajor() != currentBeacon.getMajor()) {
                 if(proximity == Utils.Proximity.IMMEDIATE || proximity == Utils.Proximity.NEAR) {
@@ -112,6 +118,7 @@ public class SearchingActivity extends AppCompatActivity {
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
+                Log.i("Search", "start ranging");
                 beaconManager.startRanging(region);
             }
         });
@@ -119,6 +126,7 @@ public class SearchingActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        Log.i("Search", "stop ranging");
         beaconManager.stopRanging(region);
         super.onPause();
     }

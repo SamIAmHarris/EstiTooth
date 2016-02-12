@@ -28,7 +28,7 @@ public class RoosterFragment extends Fragment {
 
         animalTitleTextView = (TextView) rootView.findViewById(R.id.fragment_swipe_animal_title);
         ImageView roosterImage = (ImageView) rootView.findViewById(R.id.rooster_image_view);
-        Picasso.with(getActivity()).load(R.drawable.page_1).centerCrop().fit().into(roosterImage);
+        Picasso.with(getActivity()).load(R.drawable.page_1).centerInside().fit().into(roosterImage);
 
         return rootView;
     }

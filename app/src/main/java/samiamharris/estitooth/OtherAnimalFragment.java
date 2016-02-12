@@ -26,7 +26,7 @@ public class OtherAnimalFragment extends Fragment {
         animalTitleTextView = (TextView) rootView.findViewById(R.id.fragment_swipe_animal_title);
 
         ImageView otherAnimalImage = (ImageView) rootView.findViewById(R.id.other_animal_image);
-        Picasso.with(getActivity()).load(R.drawable.elephant).centerCrop().fit().into(otherAnimalImage);
+        Picasso.with(getActivity()).load(R.drawable.elephant).centerInside().fit().into(otherAnimalImage);
 
         return rootView;
     }

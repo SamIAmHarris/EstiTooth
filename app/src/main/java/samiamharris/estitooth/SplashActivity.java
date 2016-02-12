@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         labsLogo = (ImageView) findViewById(R.id.labs_logo);
-        Picasso.with(this).load(R.drawable.labs).centerCrop().fit().into(labsLogo);
+        Picasso.with(this).load(R.drawable.labs).centerInside().fit().into(labsLogo);
 
         Handler handler = new Handler();
 
@@ -75,7 +75,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
     public void translateYAnimation(View v) {
-        int distanceMoved = convertDPToPixels(this, 150);
+        int distanceMoved = convertDPToPixels(this, 200);
         ObjectAnimator translateY = ObjectAnimator.ofFloat(v, View.TRANSLATION_Y,
                 -distanceMoved);
         translateY.setDuration(1000);

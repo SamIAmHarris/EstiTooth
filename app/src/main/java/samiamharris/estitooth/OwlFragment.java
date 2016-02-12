@@ -28,7 +28,7 @@ public class OwlFragment extends Fragment {
         animalTitleTextView = (TextView) rootView.findViewById(R.id.fragment_swipe_animal_title);
 
         ImageView owlImage = (ImageView) rootView.findViewById(R.id.owl_image_view);
-        Picasso.with(getActivity()).load(R.drawable.owl).centerCrop().fit().into(owlImage);
+        Picasso.with(getActivity()).load(R.drawable.owl).centerInside().fit().into(owlImage);
 
         return rootView;
     }
