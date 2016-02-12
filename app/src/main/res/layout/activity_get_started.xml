@@ -11,7 +11,7 @@
         android:layout_height="240dp">
 
         <ImageView
-            android:src="@drawable/bear"
+            android:id="@+id/bear"
             android:layout_alignParentLeft="true"
             android:layout_width="50dp"
             android:layout_marginTop="90dp"
@@ -19,13 +19,12 @@
 
         <ImageView
             android:id="@+id/oven_image"
-            android:src="@drawable/cook"
             android:layout_centerHorizontal="true"
             android:layout_width="180dp"
             android:layout_height="240dp" />
 
         <ImageView
-            android:src="@drawable/book"
+            android:id="@+id/book"
             android:layout_alignParentRight="true"
             android:layout_marginTop="90dp"
             android:layout_width="80dp"

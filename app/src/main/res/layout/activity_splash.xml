@@ -4,11 +4,11 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:src="@drawable/labs"
         android:id="@+id/labs_logo"
         android:layout_alignParentBottom="true"
         android:layout_margin="36dp"
-        android:layout_width="wrap_content"
-        android:layout_height="320dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_width="400dp"
+        android:layout_height="220dp" />
 
 </RelativeLayout>

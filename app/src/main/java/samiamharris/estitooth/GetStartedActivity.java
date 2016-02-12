@@ -10,6 +10,9 @@ import android.transition.Transition;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by SamMyxer on 1/28/16.
@@ -21,6 +24,14 @@ public class GetStartedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setEnterExitTransitions();
         setContentView(R.layout.activity_get_started);
+
+        ImageView bearImageView = (ImageView) findViewById(R.id.bear);
+        ImageView ovenImageView = (ImageView) findViewById(R.id.oven_image);
+        ImageView bookImageView = (ImageView) findViewById(R.id.book);
+
+        Picasso.with(this).load(R.drawable.book).centerCrop().fit().into(bookImageView);
+        Picasso.with(this).load(R.drawable.bear).centerCrop().fit().into(bearImageView);
+        Picasso.with(this).load(R.drawable.cook).centerCrop().fit().into(ovenImageView);
 
         Button blueButton = (Button) findViewById(R.id.get_started_toy_button);
         blueButton.setOnClickListener(new View.OnClickListener() {

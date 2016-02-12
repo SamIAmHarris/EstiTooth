@@ -11,6 +11,9 @@ import android.transition.Transition;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by SamMyxer on 12/4/15.
@@ -21,6 +24,9 @@ public class EnteredBakingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entered_baking);
+
+        ImageView milkLogo = (ImageView) findViewById(R.id.cookies_milk_image_view);
+        Picasso.with(this).load(R.drawable.cookies_milk_main).centerInside().fit().into(milkLogo);
 
         Transition left = new Slide(Gravity.LEFT);
         Transition right = new Slide(Gravity.BOTTOM);

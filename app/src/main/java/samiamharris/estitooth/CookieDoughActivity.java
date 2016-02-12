@@ -11,6 +11,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by SamMyxer on 12/4/15.
@@ -42,7 +45,7 @@ public class CookieDoughActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_cookie_dough);
-
+        
         final ImageView checkmark = (ImageView) findViewById(R.id.checkmark);
 
         cookieOne = (ImageView) findViewById(R.id.cookie_1);

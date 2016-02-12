@@ -5,7 +5,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by SamMyxer on 1/29/16.
@@ -23,7 +26,8 @@ public class DuckFragment extends Fragment{
                 R.layout.fragment_duck, container, false);
 
         animalTitleTextView = (TextView) rootView.findViewById(R.id.fragment_swipe_animal_title);
-
+        ImageView duckImage = (ImageView) rootView.findViewById(R.id.duck_image_view);
+        Picasso.with(getActivity()).load(R.drawable.rubber_ducky).centerCrop().fit().into(duckImage);
         return rootView;
     }
 

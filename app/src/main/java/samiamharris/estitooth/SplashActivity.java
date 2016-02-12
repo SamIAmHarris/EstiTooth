@@ -16,11 +16,14 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by SamMyxer on 1/28/16.
  */
 public class SplashActivity extends AppCompatActivity {
 
+    ImageView labsLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +32,29 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
-        ImageView labsLogo = (ImageView) findViewById(R.id.labs_logo);
+        labsLogo = (ImageView) findViewById(R.id.labs_logo);
+        Picasso.with(this).load(R.drawable.labs).centerCrop().fit().into(labsLogo);
 
         Handler handler = new Handler();
 
         handler.postDelayed(new Runnable() {
             public void run() {
+                translateYAnimation(labsLogo);
+            }
+        }, 500);
+
+        handler.postDelayed(new Runnable() {
+            public void run() {
                 animatedIntentToGetStartedActivity();
             }
-        }, 1500);
+        }, 2000);
 
-        translateYAnimation(labsLogo);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        labsLogo.setImageBitmap(null);
     }
 
     public void setExitTransitionLeft() {

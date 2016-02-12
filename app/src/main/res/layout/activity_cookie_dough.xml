@@ -19,6 +19,7 @@
 
     <RelativeLayout
         android:background="@drawable/cookie_tray"
+        android:id="@+id/cookie_tray"
         android:layout_centerInParent="true"
         android:layout_width="340dp"
         android:layout_height="210dp"/>
